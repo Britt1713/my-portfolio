@@ -166,7 +166,7 @@ body:has(main:not(.home-page)) > .home-page {
   left: 0;
   right: 0;
   height: 100vh;
-  z-index: -2;
+  z-index: 0;
   overflow: hidden;
 }
 
