@@ -1,8 +1,8 @@
 ---
 const items = [
-  { label: 'Projects & Works', href: '/projects/', image: '/images/Button 1.png' },
-  { label: 'About me', href: '/about/', image: '/images/Button 2.png' },
-  { label: 'Contact', href: '/contact/', image: '/images/Button 3.png' },
+  { label: 'Projects & Works', href: '/projects/', image: '/images/optimized/navigation-projects.webp' },
+  { label: 'About me', href: '/about/', image: '/images/optimized/navigation-about.webp' },
+  { label: 'Contact', href: '/contact/', image: '/images/optimized/navigation-contact.webp' },
 ];
 ---
 
@@ -11,7 +11,7 @@ const items = [
     {items.map((item) => (
       <a class="menu-item" href={item.href}>
         <span class="menu-image">
-          <img class="menu-photo" src={item.image} alt="" />
+          <img class="menu-photo" src={item.image} alt="" loading="eager" decoding="async" fetchpriority="high" />
         </span>
         <span class="menu-title">{item.label}</span>
       </a>
