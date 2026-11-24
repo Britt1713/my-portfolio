@@ -1,0 +1,285 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import '../../styles/global.css';
+
+const tiles = [
+  {
+    kind: 'project',
+    title: 'Muse',
+    image: '/my-portfolio/images/product foto 1.png',
+    href: '/my-portfolio/projects/muse/',
+    position: 'center 44%',
+  },
+  {
+    kind: 'project',
+    title: 'Clara Luna Design',
+    image: '/my-portfolio/images/Rich Poster Moukup Scene.png',
+    href: '/my-portfolio/projects/clara-luna-design/',
+    position: 'center',
+  },
+  { kind: 'decorative', color: 'olive' },
+  {
+    kind: 'project',
+    title: 'Remunjs Pakketje',
+    image: '/my-portfolio/images/Remunjs Pakketje.png',
+    href: '/my-portfolio/projects/remunjs-pakketje/',
+    position: 'center',
+  },
+  { kind: 'decorative', color: 'yellow' },
+  { kind: 'decorative', color: 'navy' },
+  {
+    kind: 'project',
+    title: 'Professional Overthinkers',
+    image: '/my-portfolio/images/PXL_20230604_103545450.jpg',
+    href: '/my-portfolio/projects/professional-overthinkers/',
+    position: 'center 54%',
+  },
+  { kind: 'decorative', color: 'aqua' },
+];
+---
+
+<SiteLayout title="Projects & Works — Britt Joosten">
+  <main class="projects-page" aria-labelledby="projects-title">
+    <a class="projects-home" href="/my-portfolio/">← Home</a>
+
+    <div class="projects-content">
+      <h1 id="projects-title">Projects &amp; Works</h1>
+
+      <div class="projects-grid" aria-label="Selected projects">
+        {tiles.map((tile) =>
+          tile.kind === 'project' ? (
+            <a class="project-tile" href={tile.href} aria-label={`View ${tile.title}`}>
+              <img
+                src={tile.image}
+                alt=""
+                style={`object-position: ${tile.position}`}
+                loading="eager"
+              />
+              <span class="project-tile-title">{tile.title}</span>
+            </a>
+          ) : (
+            <div class:list={['project-tile', 'decorative-tile', `tile-${tile.color}`]} aria-hidden="true"></div>
+          )
+        )}
+      </div>
+    </div>
+  </main>
+</SiteLayout>
+
+<style is:global>
+  html:has(.projects-page),
+  body:has(.projects-page) {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .projects-page {
+    --tile-olive: #5b5120;
+    --tile-yellow: #fff3bf;
+    --tile-navy: #172332;
+    --tile-aqua: #a4e1dc;
+    display: flex;
+    align-items: center; /* Centreert de titel + grid verticaal op het scherm */
+    justify-content: center;
+    height: 100svh;
+    padding: 1.5rem 0;
+    overflow: hidden;
+    background: #fdfcf9;
+  }
+
+.projects-home {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+  color: #172332;
+  font-family: 'Vipnagorgialla', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+  .projects-home:hover,
+  .projects-home:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+
+.projects-content {
+  width: min(68%, 134svh, 1200px);
+  margin: 0 auto;
+  padding-top: 0;
+}
+
+.projects-content h1 {
+  margin: 0 0 clamp(1rem, 2.5vh, 1.75rem) 0.5%;
+  color: #a4e1dc;
+  font-family: 'Vipnagorgialla', sans-serif;
+  /* Titel een maatje kleiner en verfijnder */
+  font-size: clamp(1.75rem, 3.3vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(0.45rem, 0.7vw, 0.85rem);
+  }
+
+.project-tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1;
+  border-radius: clamp(0.75rem, 1.6vw, 2rem);
+  background: #232220;
+  container-type: inline-size; 
+}
+
+  a.project-tile {
+    isolation: isolate;
+    outline-offset: 0.25rem;
+  }
+
+  .project-tile img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity 240ms ease, transform 400ms ease;
+  }
+
+.project-tile-title {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 12%;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: 'Vipnagorgialla', sans-serif;
+  /* 9.5cqw = 9.5% van de breedte van één tegel, past altijd voor zowel korte als lange titels */
+  font-size: clamp(0.85rem, 9.5cqw, 1.6rem);
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: break-word;
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+
+  .project-tile:hover img,
+  .project-tile:focus-visible img {
+    opacity: 0.55;
+    transform: scale(1.025);
+  }
+
+  .project-tile:hover .project-tile-title,
+  .project-tile:focus-visible .project-tile-title {
+    opacity: 1;
+  }
+
+  .project-tile:focus-visible {
+    outline: 3px solid #172332;
+  }
+
+  .tile-olive {
+    background: var(--tile-olive);
+  }
+
+  .tile-yellow {
+    background: var(--tile-yellow);
+  }
+
+  .tile-navy {
+    background: var(--tile-navy);
+  }
+
+  .tile-aqua {
+    background: var(--tile-aqua);
+  }
+
+ @media (max-width: 900px) {
+    html:has(.projects-page),
+    body:has(.projects-page) {
+      height: auto;
+      overflow-y: auto;
+    }
+
+    .projects-page {
+      display: block;
+      height: auto;
+      min-height: 100svh;
+      padding: 1px 0 2rem;
+    }
+
+    .projects-content {
+      width: min(84%, 680px);
+      padding-top: clamp(6rem, 12vh, 8rem);
+    }
+
+    .projects-content h1 {
+      font-size: clamp(2.5rem, 4.8vw, 6rem);
+      margin: 0 0 clamp(1.5rem, 4vh, 3rem) 1.3%;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(0.65rem, 1.5vw, 1rem);
+    }
+
+    .project-tile-title {
+      font-size: clamp(1.15rem, 3.2vw, 1.8rem);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .projects-home {
+      top: 1.25rem;
+      left: 1.25rem;
+    }
+
+    .projects-content {
+      width: calc(100% - 2.25rem);
+      padding-top: 5rem;
+    }
+
+    .projects-content h1 {
+      margin: 0 0 2rem;
+      font-size: clamp(2.4rem, 10vw, 4rem);
+      white-space: normal;
+    }
+
+    .projects-grid {
+      gap: 0.55rem;
+    }
+
+    .project-tile {
+      border-radius: 0.85rem;
+    }
+
+    .project-tile-title {
+      padding: 0.45rem;
+      font-size: clamp(0.9rem, 4.2vw, 1.25rem);
+    }
+  }
+
+  @media (hover: none) {
+    .project-tile img {
+      opacity: 0.58;
+    }
+
+    .project-tile-title {
+      opacity: 1;
+      text-shadow: 0 1px 8px #17233255;
+    }
+  }
+</style>

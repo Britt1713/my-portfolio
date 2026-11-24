@@ -1,0 +1,362 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import '../../../styles/global.css';
+---
+
+<SiteLayout title="Remunjs Pakketje — Britt Joosten">
+  <main class="remunjs-page">
+    <a class="remunjs-back" href="/my-portfolio/projects/">← Projects &amp; Works</a>
+
+    <article class="remunjs-content">
+      <header class="remunjs-header">
+        <h1>Remunjs Pakketje</h1>
+      </header>
+
+      <section class="remunjs-intro" aria-label="Project overview">
+        <img
+          class="remunjs-hero-image"
+          src="/my-portfolio/images/rmnj-M-remunjs-pakketje.avif"
+          alt="A curated Remunjs Pakketje gift crate with locally sourced products"
+          fetchpriority="high"
+        />
+        <dl class="remunjs-metadata">
+          <div>
+            <dt>Timeline</dt>
+            <dd>Jul. 2023 – Nov. 2026</dd>
+          </div>
+          <div>
+            <dt>Project type</dt>
+            <dd>Multidisciplinary team</dd>
+          </div>
+          <div>
+            <dt>Tools &amp; software</dt>
+            <dd>Excel / Adobe Illustrator / InStitch</dd>
+          </div>
+          <div>
+            <dt>Key skills</dt>
+            <dd>Brand Identity / Product Development / Business Operations / Supplier Relations / Retail Experience</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="remunjs-story" aria-label="About the project">
+        <div class="remunjs-copy">
+          <div>
+            <p>
+              At the end of 2023, I co-founded Remunjs Pakketje, a business offering curated,
+              personalised gift boxes featuring locally sourced products. By connecting individuals
+              and companies with regional makers, we supported 23 local entrepreneurs in Roermond.
+              Our offering combined carefully curated products with personalisation through custom
+              packaging, embroidery, and engraving. During our most recent holiday season, we sold
+              approximately 1,050 gift packages to both B2B and B2C customers.
+            </p>
+            <p>
+              My role spanned product development, brand communication and business operations. I
+              developed gift concepts, managed social media and created content, pitched our
+              concept to local businesses, and built relationships with suppliers. I also developed
+              an automated pricing and inventory system to streamline order management and provide
+              better insight into costs and profitability.
+            </p>
+          </div>
+          <div>
+            <p>
+              In addition, I helped establish and run both a physical store and an online store,
+              gaining practical experience in spatial layout, product presentation, and customer
+              experience.
+            </p>
+            <p>
+              Co-founding the business allowed me to apply design thinking in a real commercial
+              environment, taking concepts from initial development through to production, sales and
+              customer experience. It also taught me to navigate the practical and operational
+              challenges involved in turning a product concept into a functioning business.
+            </p>
+          </div>
+        </div>
+       <div class="remunjs-story-images">
+          <img
+            class="remunjs-story-image"
+            src="/my-portfolio/images/PXL_20241218_115000137 - Copy.avif"
+            alt="Remunjs Pakketje wooden gift crates"
+            loading="lazy"
+          />
+          <img
+            class="remunjs-story-image"
+            src="/my-portfolio/images/IMG-20250103-WA0002.avif"
+            alt="Remunjs Pakketje physical store interior"
+            loading="lazy"
+          />
+        </div>
+      </section>
+    </article>
+
+    <div class="remunjs-divider" aria-hidden="true"></div>
+
+    <section class="remunjs-gallery" aria-label="Remunjs Pakketje production and retail">
+      <img
+        src="/my-portfolio/images/PXL_20251016_172618672.jpg"
+        alt="Laser engraving products for personalised Remunjs gift packages"
+        loading="lazy"
+      />
+      <img
+        src="/my-portfolio/images/Remunjs Pakketje 2.png"
+        alt="Remunjs Pakketje gift selection displayed at a local shop"
+        loading="lazy"
+      />
+      <img
+        src="/my-portfolio/images/Remunjs Pakketje 3.png"
+        alt="Personalised embroidered pouch produced for a gift package"
+        loading="lazy"
+      />
+    </section>
+  </main>
+</SiteLayout>
+
+<style is:global>
+  html:has(.remunjs-page),
+  body:has(.remunjs-page) {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .remunjs-page {
+    --remunjs-olive: #5b5120;
+    --remunjs-ink: #172332;
+    min-height: 100svh;
+    padding: 1px 0 4rem;
+    background: #fff;
+    color: var(--remunjs-ink);
+    font-family: 'Avenir', Arial, sans-serif;
+  }
+
+  .remunjs-back {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 2;
+    color: var(--remunjs-ink);
+    font-family: 'Vipnagorgialla', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .remunjs-back:hover,
+  .remunjs-back:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+
+  .remunjs-content {
+    width: min(64%, 980px);
+    margin: 0 auto;
+    padding-top: clamp(6.5rem, 12vh, 9.5rem);
+  }
+
+  .remunjs-header h1 {
+    margin: 0 0 clamp(1.2rem, 2.2vw, 1.85rem);
+    color: var(--remunjs-olive);
+    font-family: 'Vipnagorgialla', sans-serif;
+    font-size: clamp(1.75rem, 2.75vw, 2.85rem);
+    font-weight: 400;
+    line-height: 1.05;
+  }
+
+  .remunjs-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(16rem, 1fr);
+    align-items: start;
+    gap: clamp(2.5rem, 4.5vw, 5rem);
+  }
+
+  .remunjs-hero-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .remunjs-metadata {
+    display: grid;
+    gap: clamp(0.85rem, 1.3vw, 1.25rem);
+    margin: 0;
+    padding-top: 0.1rem;
+  }
+
+  .remunjs-metadata dt {
+    margin-bottom: 0.35rem;
+    font-size: clamp(0.72rem, 0.78vw, 0.85rem);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .remunjs-metadata dd {
+    margin: 0;
+    font-size: clamp(0.75rem, 0.8vw, 0.88rem);
+    line-height: 1.45;
+  }
+
+  .remunjs-story {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(14rem, 0.85fr);
+    align-items: start;
+    gap: clamp(1.75rem, 3.2vw, 3.5rem);
+    margin-top: clamp(2.5rem, 5vh, 4rem);
+    padding-bottom: clamp(2.5rem, 5vh, 4rem);
+  }
+
+  .remunjs-copy {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.25rem, 1.8vw, 1.75rem);
+    font-size: clamp(0.76rem, 0.8vw, 0.88rem);
+    line-height: 1.4;
+    text-align: justify;
+  }
+
+ .remunjs-story-images {
+    display: grid;
+    gap: clamp(0.85rem, 1.4vw, 1.35rem);
+  }
+
+  .remunjs-story-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .remunjs-story-image:last-child {
+    aspect-ratio: 1.45;
+  }
+
+  .remunjs-divider {
+    width: 100%;
+    height: clamp(0.65rem, 0.9vw, 0.95rem);
+    background: var(--remunjs-olive);
+  }
+
+  .remunjs-gallery {
+    display: grid;
+    width: min(64%, 980px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: clamp(0.85rem, 1.4vw, 1.35rem);
+    margin: 0 auto;
+    padding: clamp(3rem, 5vw, 4.5rem) 0;
+  }
+
+  .remunjs-gallery img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.78;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .remunjs-content {
+      width: min(86%, 760px);
+      padding-top: 6rem;
+    }
+
+    .remunjs-intro {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+      gap: 1.5rem;
+    }
+
+    .remunjs-story {
+      grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.75fr);
+      gap: 1.5rem;
+    }
+
+    .remunjs-copy {
+      grid-template-columns: 1fr;
+      gap: 0;
+      font-size: 0.9rem;
+    }
+
+    .remunjs-gallery {
+      width: 86%;
+      gap: 0.8rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .remunjs-page {
+      padding-bottom: 2rem;
+    }
+
+    .remunjs-back {
+      top: 1.25rem;
+      left: 1.15rem;
+      font-size: 0.8rem;
+    }
+
+    .remunjs-content {
+      width: calc(100% - 2.25rem);
+      padding-top: 4.5rem;
+    }
+
+    .remunjs-header h1 {
+      margin-bottom: 1rem;
+      font-size: clamp(1.75rem, 8vw, 2.8rem);
+    }
+
+    .remunjs-intro,
+    .remunjs-story {
+      grid-template-columns: 1fr;
+    }
+
+    .remunjs-intro {
+      gap: 1.5rem;
+    }
+
+    .remunjs-metadata {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .remunjs-metadata dt {
+      margin-bottom: 0.35rem;
+      font-size: 0.72rem;
+    }
+
+    .remunjs-metadata dd {
+      font-size: 0.78rem;
+      overflow-wrap: anywhere;
+    }
+
+    .remunjs-story {
+      gap: 0;
+      margin-top: 2rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .remunjs-copy {
+      grid-template-columns: 1fr;
+      font-size: 0.9rem;
+    }
+
+    .remunjs-story-image {
+      width: min(100%, 28rem);
+      margin: 0 auto;
+    }
+
+    .remunjs-gallery {
+      width: calc(100% - 2.25rem);
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 2.5rem 0;
+    }
+
+    .remunjs-gallery img {
+      width: min(100%, 28rem);
+      aspect-ratio: 0.85;
+      margin: 0 auto;
+    }
+  }
+</style>

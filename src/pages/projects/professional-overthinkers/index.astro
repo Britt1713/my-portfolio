@@ -1,0 +1,530 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import '../../../styles/global.css';
+---
+
+<SiteLayout title="Professional Overthinkers — Britt Joosten">
+  <main class="overthinkers-page">
+    <a class="overthinkers-back" href="/my-portfolio/projects/">← Projects &amp; Works</a>
+
+    <article class="overthinkers-content">
+      <header class="overthinkers-header">
+        <h1>Professional Overthinkers</h1>
+      </header>
+
+      <section class="overthinkers-intro" aria-label="Project overview">
+        <img
+          class="overthinkers-hero-image"
+          src="/my-portfolio/images/PXL_20230604_103545450.jpg"
+          alt="Professional Overthinkers garment in its urban setting"
+          fetchpriority="high"
+        />
+        <dl class="overthinkers-metadata">
+          <div>
+            <dt>Timeline</dt>
+            <dd>Feb. 2023 – Jun. 2023</dd>
+          </div>
+          <div>
+            <dt>Project type</dt>
+            <dd>Individual project</dd>
+          </div>
+          <div>
+            <dt>Tools &amp; software</dt>
+            <dd>SolidWorks / Adobe Illustrator / Adobe InDesign / Silhouette</dd>
+          </div>
+          <div>
+            <dt>Key skills</dt>
+            <dd>User Research / Concept Development / Textile Techniques / Pattern Making / Interaction Design</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="overthinkers-story" aria-label="About the project">
+        <div class="overthinkers-copy">
+          <div>
+            <p>
+              For many young adults aged 18–25, reaching for a smartphone has become a familiar way
+              to escape negative thoughts and overwhelming emotions. While scrolling can provide
+              temporary distraction, it does not address the underlying thought patterns.
+              Professional Overthinkers explores how streetwear can make mindfulness and positive
+              mind training more approachable, offering an alternative to habitual digital
+              escapism.
+            </p>
+            <p>
+              Following a user-centred approach informed by the Double Diamond methodology, I
+              conducted interviews with users and experts and developed and prototyped concepts
+              using a range of textile techniques. These insights informed a streetwear-inspired
+              garment designed to resonate with a younger audience and challenge the stigma
+              surrounding mindfulness.
+            </p>
+          </div>
+          <div>
+            <p>
+              The garment features a pocket positioned at the front that integrates NFC technology.
+              By flipping the pocket over their head, the wearer activates an audio guide with
+              evidence-informed positive mind training and mindfulness exercises. This physical
+              interaction creates a moment of separation from the smartphone to focus on their
+              thoughts. Through repeated use, the garment aims to become a familiar cue to pause and
+              put the phone aside, eventually serving as a reminder without the need for guidance.
+            </p>
+            <p>
+              Rather than simply replacing scrolling with another distraction, Professional
+              Overthinkers aims to help young adults gradually become more comfortable with their
+              own thoughts.
+            </p>
+            <p>
+              <a
+                class="overthinkers-video-link"
+                href="/my-portfolio/videos/fbp%20vid.mp4"
+                target="_blank"
+                rel="noreferrer"
+              >Video</a>
+            </p>
+          </div>
+        </div>
+        <img
+          class="overthinkers-story-image"
+          src="/my-portfolio/images/PO pocket.png"
+          alt="Close view of the garment’s NFC pocket interaction"
+          loading="lazy"
+        />
+      </section>
+    </article>
+
+    <div class="overthinkers-divider" aria-hidden="true"></div>
+
+    <div class="overthinkers-process">
+      <section class="overthinkers-process-section" aria-labelledby="overthinkers-concept-heading">
+        <h2 id="overthinkers-concept-heading">Concept exploration</h2>
+        <div class="overthinkers-concept-gallery">
+          <img
+            src="/my-portfolio/images/diagrem.png"
+            alt="Concept diagram showing the development toward the Professional Overthinkers garment"
+            loading="lazy"
+          />
+          <img
+            src="/my-portfolio/images/PXL_20261119_132827171.jpg"
+            alt="Early garment and pocket placement exploration"
+            loading="lazy"
+          />
+          <img
+            src="/my-portfolio/images/PXL_20261119_132839648.jpg"
+            alt="Textile construction and sewing exploration"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section class="overthinkers-process-section" aria-labelledby="overthinkers-material-heading">
+        <h2 id="overthinkers-material-heading">Material exploration</h2>
+        <div class="overthinkers-material-gallery">
+          <img
+            src="/my-portfolio/images/PXL_20230614_091211944.jpg"
+            alt="Textile swatch with notes from material exploration"
+            loading="lazy"
+          />
+          <img
+            src="/my-portfolio/images/PXL_20230614_091406574.jpg"
+            alt="Material and textile technique samples"
+            loading="lazy"
+          />
+          <img
+            src="/my-portfolio/images/PXL_20230615_145256911.jpg"
+            alt="Garment concept sketches in a notebook"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section class="overthinkers-process-section" aria-labelledby="overthinkers-prototype-heading">
+        <h2 id="overthinkers-prototype-heading">Prototyping &amp; testing</h2>
+        <div class="overthinkers-prototype-gallery">
+          <img
+            src="/my-portfolio/images/PXL_20230516_173736183.jpg"
+            alt="Fabric prototype laid out for construction"
+            loading="lazy"
+          />
+          <img
+            src="/my-portfolio/images/PXL_20230525_174852039.jpg"
+            alt="Wearable garment prototype with integrated pocket"
+            loading="lazy"
+          />
+          <div class="prototype-stacked-pair">
+            <img
+              src="/my-portfolio/images/color options po.png"
+              alt="Color and garment options for Professional Overthinkers"
+              loading="lazy"
+            />
+            <img
+              src="/my-portfolio/images/PXL_20230528_073458301.MP.jpg"
+              alt="Machine stitching detail on fabric"
+              loading="lazy"
+            />
+          </div>
+          <img
+            src="/my-portfolio/images/Poster Po.png"
+            alt="Professional Overthinkers poster design"
+            loading="lazy"
+          />
+        </div>
+      </section>
+    </div>
+  </main>
+</SiteLayout>
+
+<style is:global>
+  html:has(.overthinkers-page),
+  body:has(.overthinkers-page) {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .overthinkers-page {
+    --overthinkers-navy: #172332;
+    min-height: 100svh;
+    padding: 1px 0 4rem;
+    background: #fff;
+    color: var(--overthinkers-navy);
+    font-family: 'Avenir', Arial, sans-serif;
+  }
+
+  .overthinkers-back {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 2;
+    color: var(--overthinkers-navy);
+    font-family: 'Vipnagorgialla', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .overthinkers-back:hover,
+  .overthinkers-back:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+
+  .overthinkers-content,
+  .overthinkers-process {
+    width: min(64%, 980px);
+    margin: 0 auto;
+  }
+
+  .overthinkers-content {
+    padding-top: clamp(6.5rem, 12vh, 9.5rem);
+  }
+
+  .overthinkers-header h1,
+  .overthinkers-process-section h2 {
+    margin: 0;
+    color: var(--overthinkers-navy);
+    font-family: 'Vipnagorgialla', sans-serif;
+    font-weight: 400;
+    line-height: 1.05;
+  }
+
+  .overthinkers-header h1 {
+    margin-bottom: clamp(1.2rem, 2.2vw, 1.85rem);
+    font-size: clamp(1.75rem, 2.75vw, 2.85rem);
+  }
+
+  .overthinkers-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(16rem, 1fr);
+    align-items: start;
+    gap: clamp(2.5rem, 4.5vw, 5rem);
+  }
+
+  .overthinkers-hero-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .overthinkers-metadata {
+    display: grid;
+    gap: clamp(0.85rem, 1.3vw, 1.25rem);
+    margin: 0;
+    padding-top: 0.1rem;
+  }
+
+  .overthinkers-metadata dt {
+    margin-bottom: 0.35rem;
+    font-size: clamp(0.72rem, 0.78vw, 0.85rem);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .overthinkers-metadata dd {
+    margin: 0;
+    font-size: clamp(0.75rem, 0.8vw, 0.88rem);
+    line-height: 1.45;
+  }
+
+  .overthinkers-story {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(14rem, 0.85fr);
+    align-items: start;
+    gap: clamp(1.75rem, 3.2vw, 3.5rem);
+    margin-top: clamp(2.5rem, 5vh, 4rem);
+    padding-bottom: clamp(2.5rem, 5vh, 4rem);
+  }
+
+  .overthinkers-copy {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.25rem, 1.8vw, 1.75rem);
+    font-size: clamp(0.76rem, 0.8vw, 0.88rem);
+    line-height: 1.4;
+    text-align: justify;
+  }
+
+  .overthinkers-copy p {
+    margin: 0 0 1.1rem;
+  }
+
+  .overthinkers-video-link {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .overthinkers-story-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .overthinkers-divider {
+    width: 100%;
+    height: clamp(0.65rem, 0.9vw, 0.95rem);
+    background: #192331;
+  }
+
+  .overthinkers-process {
+    padding-top: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  .overthinkers-process-section {
+    margin-bottom: clamp(3.5rem, 6vw, 5.5rem);
+  }
+
+  .overthinkers-process-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .overthinkers-process-section h2 {
+    margin-bottom: clamp(1rem, 1.6vw, 1.5rem);
+    font-size: clamp(1.35rem, 2.1vw, 2.2rem);
+  }
+
+  .overthinkers-concept-gallery,
+  .overthinkers-material-gallery {
+    display: grid;
+    align-items: start;
+    gap: clamp(0.65rem, 1.1vw, 1rem);
+  }
+
+  .overthinkers-concept-gallery {
+    grid-template-columns: 1.04fr 0.81fr 0.81fr;
+    align-items: stretch;
+  }
+
+  .overthinkers-material-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .overthinkers-material-gallery img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.78;
+    object-fit: cover;
+  }
+
+  .overthinkers-concept-gallery img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .overthinkers-concept-gallery img:nth-child(2),
+  .overthinkers-concept-gallery img:nth-child(3) {
+    aspect-ratio: 0.78;
+  }
+
+  .overthinkers-concept-gallery img:first-child {
+    aspect-ratio: auto;
+    object-fit: fill;
+  }
+
+  .overthinkers-material-gallery img:nth-child(3) {
+    transform: rotate(180deg);
+  }
+
+  .overthinkers-prototype-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: end;
+    gap: clamp(0.65rem, 1.1vw, 1rem);
+  }
+
+  .overthinkers-prototype-gallery > img:nth-child(1),
+  .overthinkers-prototype-gallery > img:nth-child(2) {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.72;
+    object-fit: cover;
+  }
+
+  .prototype-stacked-pair {
+    display: grid;
+    gap: clamp(0.65rem, 1.1vw, 1rem);
+  }
+
+  .prototype-stacked-pair img:first-child {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .prototype-stacked-pair img:last-child {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1.45;
+    object-fit: cover;
+  }
+
+  .overthinkers-prototype-gallery > img:last-child {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.8;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .overthinkers-content,
+    .overthinkers-process {
+      width: min(86%, 760px);
+    }
+
+    .overthinkers-content {
+      padding-top: 6rem;
+    }
+
+    .overthinkers-intro {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+      gap: 1.5rem;
+    }
+
+    .overthinkers-story {
+      grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.75fr);
+      gap: 1.5rem;
+    }
+
+    .overthinkers-copy {
+      grid-template-columns: 1fr;
+      gap: 0;
+      font-size: 0.9rem;
+    }
+
+    .overthinkers-prototype-gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 600px) {
+    .overthinkers-page {
+      padding-bottom: 2rem;
+    }
+
+    .overthinkers-back {
+      top: 1.25rem;
+      left: 1.15rem;
+      font-size: 0.8rem;
+    }
+
+    .overthinkers-content,
+    .overthinkers-process {
+      width: calc(100% - 2.25rem);
+    }
+
+    .overthinkers-content {
+      padding-top: 4.5rem;
+    }
+
+    .overthinkers-header h1 {
+      margin-bottom: 1rem;
+      font-size: clamp(1.75rem, 8vw, 2.8rem);
+    }
+
+    .overthinkers-intro,
+    .overthinkers-story {
+      grid-template-columns: 1fr;
+    }
+
+    .overthinkers-intro {
+      gap: 1.5rem;
+    }
+
+    .overthinkers-metadata {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .overthinkers-metadata dt {
+      margin-bottom: 0.35rem;
+      font-size: 0.72rem;
+    }
+
+    .overthinkers-metadata dd {
+      font-size: 0.78rem;
+      overflow-wrap: anywhere;
+    }
+
+    .overthinkers-story {
+      gap: 0;
+      margin-top: 2rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .overthinkers-copy {
+      grid-template-columns: 1fr;
+      font-size: 0.9rem;
+    }
+
+    .overthinkers-story-image {
+      width: min(100%, 28rem);
+      margin: 0 auto;
+    }
+
+    .overthinkers-process {
+      padding-top: 3rem;
+    }
+
+    .overthinkers-process-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .overthinkers-process-section h2 {
+      font-size: clamp(1.35rem, 6vw, 2rem);
+    }
+
+    .overthinkers-concept-gallery,
+    .overthinkers-material-gallery,
+    .overthinkers-prototype-gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem;
+    }
+  }
+</style>

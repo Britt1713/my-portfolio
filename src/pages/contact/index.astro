@@ -1,0 +1,326 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import '../../styles/global.css';
+---
+
+<SiteLayout title="Contact — Britt Joosten">
+  <main class="contact-page" aria-labelledby="contact-title">
+    <div class="contact-layout">
+      <section class="contact-intro" aria-label="Contact Britt Joosten">
+        <img
+          class="contact-star"
+          src="/my-portfolio/images/silver-clips_0008_Layer-11.png"
+          alt=""
+        />
+        <h1 id="contact-title" class="contact-heading">
+          <span class="contact-word">C<span class="aqua-letter">o</span>ntact</span>
+          <span class="me-word"><span>M</span><span class="pink-letter">e</span></span>
+        </h1>
+        <div class="contact-eyelet" aria-hidden="true">
+          <img
+            class="eyelet-fabric"
+            src="/my-portfolio/images/plaid-pattern-seamless-check-texture-260nw-2699705877.webp"
+            alt=""
+          />
+          <img
+            class="eyelet-ring"
+            src="/my-portfolio/images/zeil ring 2.png"
+            alt=""
+          />
+        </div>
+      </section>
+
+      <section class="contact-information" aria-label="Contact information">
+        <dl class="contact-details">
+          <div class="contact-row">
+            <dt>Phone</dt>
+            <dd><a href="tel:+31683348343">+31 (0)6 83 34 83 43</a></dd>
+          </div>
+          <div class="contact-row">
+            <dt>Adress</dt>
+            <dd>Bergerweg 40 / 6063BS Vlodrop / Netherlands</dd>
+          </div>
+          <div class="contact-row">
+            <dt>Email</dt>
+            <dd><a href="mailto:britt.joosten.2000@gmail.com">Britt.Joosten.2000@gmail.com</a></dd>
+          </div>
+        </dl>
+
+        <nav class="contact-socials" aria-label="Social media">
+          <a href="https://www.linkedin.com/in/britt-joosten-05805a1b0" target="_blank" rel="noreferrer">LinkedIn</a>
+          <span aria-hidden="true">/</span>
+          <a href="https://www.instagram.com/britt_joosten/" target="_blank" rel="noreferrer">Instagram</a>
+          <span aria-hidden="true">/</span>
+          <a href="https://pin.it/75FGSfIPI" target="_blank" rel="noreferrer">Pinterest</a>
+          <span aria-hidden="true">/</span>
+        </nav>
+
+        <a class="contact-home-link" href="/my-portfolio/">← Home</a>
+      </section>
+    </div>
+  </main>
+</SiteLayout>
+
+<style is:global>
+  html:has(.contact-page),
+  body:has(.contact-page) {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .contact-page {
+    --contact-olive: #5b5120;
+    --contact-aqua: #a4e1dc;
+    --contact-pink: #ffc0c3;
+    min-height: 100svh;
+    overflow: hidden;
+    background: #fdfcf9;
+    color: #172332;
+  }
+
+  .contact-layout {
+    position: relative;
+    width: min(100%, 1920px);
+    min-height: 100svh;
+    margin: 0 auto;
+  }
+
+  .contact-intro {
+    position: absolute;
+    inset: 0;
+  }
+
+  .contact-star {
+    position: absolute;
+    top: 13%;
+    left: 35%;
+    z-index: 2;
+    width: clamp(7rem, 7.5vw, 15rem);
+    height: auto;
+    object-fit: contain;
+  }
+
+  .contact-heading {
+    position: absolute;
+    top: 29%;
+    left: 9.5%;
+    margin: 0;
+    z-index: 1;
+    color: var(--contact-olive);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(5.5rem, 12.2vw, 14.5rem);
+    font-weight: 400;
+    letter-spacing: -0.075em;
+    line-height: 0.74;
+  }
+
+  .contact-word,
+  .me-word {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .aqua-letter {
+    color: var(--contact-aqua);
+  }
+
+  .me-word {
+    margin-top: -0.08em;
+    margin-left: 42%;
+    font-style: italic;
+  }
+
+  .pink-letter {
+    color: var(--contact-pink);
+  }
+
+  .contact-eyelet {
+    position: absolute;
+    top: 56%;
+    left: 5%;
+    width: clamp(12rem, 23vw, 26rem);
+    aspect-ratio: 4 / 3;
+  }
+
+  .eyelet-fabric {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 43%;
+    height: 57%;
+    border-radius: 50%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+  }
+
+  .eyelet-ring {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .contact-information {
+    position: absolute;
+    right: 5.7%;
+    bottom: 10.5%;
+    width: 40.5%;
+  }
+
+  .contact-details {
+    margin: 0;
+    border-top: 1px solid #172332;
+  }
+
+  .contact-row {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    align-items: center;
+    gap: 1rem;
+    min-height: 3.2rem;
+    border-bottom: 1px solid #172332;
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .contact-row dt,
+  .contact-row dd {
+    margin: 0;
+  }
+
+  .contact-row dd {
+    text-align: right;
+  }
+
+  .contact-row a,
+  .contact-socials a,
+  .contact-home-link {
+    text-decoration: none;
+  }
+
+  .contact-row a:hover,
+  .contact-socials a:hover,
+  .contact-home-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .contact-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 3rem;
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+.contact-home-link {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+  display: inline-block;
+  margin: 0;
+  font-family: 'Vipnagorgialla', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+  @media (max-width: 850px) {
+    .contact-page {
+      min-height: 100svh;
+      overflow: visible;
+    }
+
+    .contact-layout {
+      display: grid;
+      min-height: 100svh;
+      grid-template-columns: minmax(0, 1fr);
+      align-content: start;
+      gap: 1.5rem;
+      padding: clamp(1.5rem, 5vw, 3rem);
+    }
+
+    .contact-intro {
+      position: relative;
+      min-height: clamp(22rem, 58vw, 32rem);
+    }
+
+    .contact-star {
+      top: 0;
+      right: 9%;
+      left: auto;
+      width: clamp(6rem, 18vw, 10rem);
+    }
+
+    .contact-heading {
+      top: 24%;
+      left: 0;
+      font-size: clamp(5.5rem, 15vw, 9.5rem);
+    }
+
+    .contact-eyelet {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      width: clamp(11rem, 40vw, 15rem);
+    }
+
+    .contact-information {
+      position: relative;
+      right: auto;
+      bottom: auto;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    .contact-row {
+      min-height: 3.3rem;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+
+    .contact-socials {
+      margin-top: 2rem;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .contact-layout {
+      padding: 1.5rem 1.1rem 2rem;
+    }
+
+    .contact-intro {
+      min-height: 21rem;
+    }
+
+    .contact-heading {
+      top: 30%;
+      font-size: clamp(4.5rem, 18vw, 6.5rem);
+    }
+
+    .contact-eyelet {
+      width: 9.5rem;
+    }
+
+    .contact-row {
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+      padding: 0.65rem 0;
+    }
+
+    .contact-row dd {
+      text-align: left;
+    }
+
+    .contact-socials {
+      gap: 0.35rem;
+    }
+  }
+</style>

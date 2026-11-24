@@ -1,0 +1,35 @@
+---
+import { ClientRouter } from 'astro:transitions';
+
+const { title = 'Britt Joosten — Portfolio' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Portfolio of product designer Britt Joosten." />
+
+    <link
+      rel="preload"
+      href="/my-portfolio/fonts/Vipnagorgialla%20Rg.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/my-portfolio/fonts/Vipnagorgialla%20Bd.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+
+    <title>{title}</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

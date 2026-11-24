@@ -1,0 +1,5 @@
+node_modules/
+.astro/
+dist/
+design/
+Portfolio_Folder/

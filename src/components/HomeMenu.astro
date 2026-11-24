@@ -1,0 +1,20 @@
+---
+const items = [
+  { label: 'Projects & Works', href: '/my-portfolio/projects/', image: '/my-portfolio/images/Button 1.png' },
+  { label: 'About me', href: '/my-portfolio/about/', image: '/my-portfolio/images/Button 2.png' },
+  { label: 'Contact', href: '/my-portfolio/contact/', image: '/my-portfolio/images/Button 3.png' },
+];
+---
+
+<nav class="home-menu" aria-label="Main navigation">
+  <div class="menu-items">
+    {items.map((item) => (
+      <a class="menu-item" href={item.href}>
+        <span class="menu-image">
+          <img class="menu-photo" src={item.image} alt="" />
+        </span>
+        <span class="menu-title">{item.label}</span>
+      </a>
+    ))}
+  </div>
+</nav>

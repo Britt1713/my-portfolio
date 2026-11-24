@@ -1,0 +1,760 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import '../../styles/global.css';
+---
+
+<SiteLayout title="About Me — Britt Joosten">
+  <main class="about-book-page" data-state="1">
+    <a class="home-tab" href="/my-portfolio/">← Home</a>
+
+    <div class="book-stage">
+      <div class="book-assembly" id="bookAssembly">
+        <!-- ACHTERKAFT (Olive sheet rechtsonder, komt tevoorschijn zodra het gele blad omslaat) -->
+        <div class="base-sheet olive-sheet" aria-hidden="true"></div>
+
+        <!-- BLAD 2: GELE STORY PAGINA (Front = rechts) + MINT GALLERY PAGINA (Back = slaat om naar links!) -->
+        <div class="leaf leaf-story" id="leafStory">
+          <!-- VOORKANT (Rechterpagina op Spread 2: Geel verhaal) -->
+          <div class="leaf-face leaf-front story-sheet">
+            <header class="story-heading">
+              <h1>Hi, I’m Britt</h1>
+            </header>
+
+            <div class="story-copy">
+              <div>
+                <p>
+                  a product designer with an MSc in Industrial Design from TU/e
+                  I enjoy turning ideas into tangible products, exploring how functionality,
+                  aesthetics, and brand experience can come together to create something
+                  meaningful. I like working hands-on, moving between concept development,
+                  experimentation and refinement, while paying close attention to detail, and the
+                  overall experience a product creates.
+                </p>
+                <p>
+                  My curiosity for making extends beyond my design work. In my free time, I enjoy
+                  sewing and knitting, experimenting with ceramics, and exploring techniques such
+                  as embroidery and screen printing. I’m often inspired by things I come across on
+                  social media, immediately wondering how I could recreate them or put my own spin
+                  on them.
+                </p>
+              </div>
+              <div>
+                <p>
+                  I enjoy learning new techniques and discovering what I can make with my
+                  own hands.
+
+                  Alongside my studies, I co-founded and ran small businesses in graphic design
+                  and personalised gifting. These experiences broadened my perspective on how
+                  product development, visual identity, and customer experience come together in
+                  practice.
+                </p>
+                <p>
+                  I’m drawn to design-driven teams where curiosity, craftsmanship, and a strong
+                  visual sensibility are valued. Ultimately, I want to create products and
+                  experiences that work well, feel considered, and become something people genuinely
+                  value.
+                </p>
+              </div>
+            </div>
+
+            <div class="portrait-wrap">
+              <img
+                class="portrait"
+                src="/my-portfolio/images/me.png"
+                alt="Britt wearing a backpack on a hiking trip"
+              />
+              <img class="portrait-detail" src="/my-portfolio/images/Button 1.png" alt="" />
+            </div>
+
+            <div class="sheet-corner-nav">
+              <button type="button" class="nav-circle" data-goto="1" aria-label="Back to notebook cover">
+                ←
+              </button>
+              <span class="page-counter">02 / 03</span>
+              <button type="button" class="nav-circle" data-goto="3" aria-label="Next notebook page">
+                →
+              </button>
+            </div>
+          </div>
+
+          <!-- ACHTERKANT (Wordt de linkerpagina op Spread 3: Teal / Mint Gallery!) -->
+          <div class="leaf-face leaf-back gallery-sheet" id="sheetGallery">
+            <div class="photo-gallery">
+              <img src="/my-portfolio/images/creative2.png" alt="A handmade embroidered design on a T-shirt" />
+              <img src="/my-portfolio/images/creative1.png" alt="Materials and tools arranged during a creative project" />
+              <img src="/my-portfolio/images/creative3.png" alt="Embroidery being made on a sewing machine" />
+            </div>
+
+            <img
+              class="metal-tape"
+              src="/my-portfolio/images/9ee222268fd1d3fd6f07e9e40d8056c9.png"
+              alt=""
+            />
+
+            <img
+              class="metal-star star-top"
+              src="/my-portfolio/images/silver-clips_0008_Layer-11.png"
+              alt=""
+            />
+
+            <img
+              class="metal-star star-bottom"
+              src="/my-portfolio/images/silver-clips_0007_Layer-10.png"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <!-- BLAD 1: VOORKAFT (Front = Navy Cover, Back = Leather Inner Cover links op Spread 2) -->
+        <div class="leaf leaf-cover" id="leafCover">
+          <div
+            class="leaf-face leaf-front cover-board"
+            role="button"
+            tabindex="0"
+            aria-label="Open the About Me notebook"
+          >
+            <img class="cover-star" src="/my-portfolio/images/Star yellow.png" alt="" />
+            <img class="cover-white-bg" src="/my-portfolio/images/face_background.png" alt="" />
+            <img class="cover-title" src="/my-portfolio/images/About me.png" alt="About me" />
+            <img
+              class="cover-person"
+              src="/my-portfolio/images/face_stars.png"
+              alt="Illustrated portrait of Britt"
+            />
+            <img class="cover-button" src="/my-portfolio/images/Button 2.png" alt="" />
+          </div>
+
+          <!-- Binnenkant van de kaft (ligt op de linkerhelft; op Spread 3 legt de teal pagina zich hier bovenop) -->
+          <div class="leaf-face leaf-back cover-inner-flap" aria-hidden="true">
+            <img src="/my-portfolio/images/imageskk.jpg" alt="" />
+          </div>
+        </div>
+
+        <!-- CENTRALE RINGBAND (blijft altijd op de middelste rug tussen linker- en rechterpagina liggen) -->
+        <img
+          class="rings center-rings"
+          src="/my-portfolio/images/jump rings.png"
+          alt=""
+          decoding="sync"
+        />
+      </div>
+
+      <button type="button" class="cover-link" id="openCoverBtn" data-goto="2">
+        Open notebook <span aria-hidden="true">→</span>
+      </button>
+
+      <!-- Vaste navigatie voor Pagina 3 (buiten 3D-rotatie zodat hij altijd 100% klikbaar is) -->
+      <div class="gallery-stage-nav" aria-label="Gallery navigation">
+        <button type="button" class="nav-circle" data-goto="2" aria-label="Previous notebook page">
+          ←
+        </button>
+        <span class="page-counter">03 / 03</span>
+      </div>
+    </div>
+
+    <!-- Pagina-indicatoren onderaan -->
+    <nav class="book-dots" aria-label="Notebook pages">
+      <button type="button" class="dot is-active" data-goto="1" aria-label="Cover"></button>
+      <button type="button" class="dot" data-goto="2" aria-label="Story"></button>
+      <button type="button" class="dot" data-goto="3" aria-label="Gallery"></button>
+    </nav>
+  </main>
+</SiteLayout>
+
+<script>
+  const page = document.querySelector('.about-book-page');
+  const leafCover = document.getElementById('leafCover');
+  const leafStory = document.getElementById('leafStory');
+  const openBtn = document.getElementById('openCoverBtn');
+  const dots = Array.from(document.querySelectorAll('.dot'));
+  let current = 1;
+  let isBusy = false;
+
+  function updateUI(target) {
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('is-active', index + 1 === target);
+    });
+    if (openBtn) {
+      openBtn.style.opacity = target === 1 ? '1' : '0';
+      openBtn.style.pointerEvents = target === 1 ? 'auto' : 'none';
+    }
+  }
+
+  function setState(target) {
+    if (isBusy || target < 1 || target > 3 || target === current) return;
+    isBusy = true;
+    current = target;
+    updateUI(target);
+
+    // Verschuiven van het boekje en omslaan van het blad gebeuren op exact hetzelfde moment
+    page?.setAttribute('data-state', String(target));
+    leafCover?.classList.toggle('is-flipped', target >= 2);
+    leafStory?.classList.toggle('is-flipped', target === 3);
+
+    setTimeout(() => {
+      isBusy = false;
+    }, 1050);
+  }
+
+  document.querySelectorAll('[data-goto]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const target = Number(btn.getAttribute('data-goto'));
+      setState(target);
+    });
+  });
+
+  const coverBoard = document.querySelector('.cover-board');
+  coverBoard?.addEventListener('click', () => setState(2));
+  coverBoard?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      setState(2);
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') setState(current + 1);
+    if (e.key === 'ArrowLeft') setState(current - 1);
+  });
+</script>
+
+<style is:global>
+  html:has(.about-book-page),
+  body:has(.about-book-page) {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .about-book-page {
+    --navy: #192432;
+    --aqua: #a4e1dc;
+    --olive: #5b5120;
+    --paper: #fff3bf;
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100svh;
+    background: #fdfcf9;
+    color: var(--navy);
+    font-family: 'Avenir', Arial, sans-serif;
+    overflow: hidden;
+  }
+
+  .home-tab {
+    position: fixed;
+    top: 1.75rem;
+    left: 2rem;
+    z-index: 40;
+    color: var(--navy);
+    font: 0.85rem 'Vipnagorgialla', sans-serif;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .home-tab:hover,
+  .home-tab:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+
+  .book-stage {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 3.5rem 2vw 1rem;
+    box-sizing: border-box;
+    perspective: 2600px;
+  }
+
+  /* Synchrone verschuiving van het hele boekje */
+  .book-assembly {
+    position: relative;
+    width: min(74vw, 74svh * 1.82, 1180px);
+    aspect-ratio: 1.82;
+    transform-style: preserve-3d;
+    transition: transform 1050ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* State 1: Cover gecentreerd */
+  .about-book-page[data-state='1'] .book-assembly {
+    transform: translateX(0);
+  }
+  /* State 2: Gehele boek naar rechts zodat rechts (Geel) centraal staat en links (Blauw) ernaast ligt */
+  .about-book-page[data-state='2'] .book-assembly {
+    transform: translateX(15%);
+  }
+  /* State 3: Gehele boek nog verder naar rechts zodat de linkerpagina (Teal) nu op de hoofdpositie staat en rechts (Groen) ernaast ligt */
+  .about-book-page[data-state='3'] .book-assembly {
+    transform: translateX(84%);
+  }
+
+  /* Centrale ringband op de middelste rug (left: -4%) */
+  .center-rings {
+    position: absolute;
+    top: 7%;
+    bottom: 8%;
+    left: -4%;
+    z-index: 40;
+    width: 8%;
+    height: 87%;
+    object-fit: contain;
+    pointer-events: none;
+    transform: translateZ(50px);
+    backface-visibility: hidden;
+  }
+
+  /* --- 3D BLADEREN (LEAVES) --- */
+  .leaf {
+    position: absolute;
+    inset: 0;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    pointer-events: none;
+    transition: transform 1050ms cubic-bezier(0.22, 1, 0.36, 1), z-index 0s linear 500ms;
+  }
+
+  .leaf-cover {
+    z-index: 20;
+  }
+
+  .leaf-story {
+    z-index: 15;
+  }
+
+  .leaf.is-flipped {
+    transform: rotateY(-180deg);
+  }
+
+  .leaf-cover.is-flipped {
+    z-index: 10;
+  }
+
+  /* Zodra het gele blad omslaat, komt de teal achterkant (gallery-sheet) BOVENOP de donkerblauwe kaft te liggen! */
+  .leaf-story.is-flipped {
+    z-index: 25;
+  }
+
+  .leaf-face {
+    position: absolute;
+    inset: 0;
+    border-radius: 3.2rem;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    box-sizing: border-box;
+    pointer-events: auto;
+  }
+
+  .leaf-back {
+    transform: rotateY(180deg);
+  }
+
+  .leaf.is-flipped .leaf-front {
+    pointer-events: none;
+  }
+
+  .leaf.is-flipped .leaf-back {
+    pointer-events: auto;
+  }
+
+  /* --- BLAD 1 VOORKANT: NAVY COVER --- */
+  .cover-board {
+    background: var(--navy);
+    box-shadow: 0 20px 45px rgba(25, 36, 50, 0.16);
+    cursor: pointer;
+  }
+
+  .cover-star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 64%;
+    height: 126%;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .cover-title {
+    position: absolute;
+    z-index: 2;
+    top: 53%;
+    left: 46%;
+    width: 14%;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .cover-white-bg {
+    position: absolute;
+    z-index: 1;
+    top: 55%;
+    left: 56%;
+    width: 25%;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .cover-person {
+    position: absolute;
+    z-index: 2;
+    top: 54%;
+    left: 56.5%;
+    width: 23%;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .cover-button {
+    position: absolute;
+    z-index: 3;
+    top: 27%;
+    left: 71.5%;
+    width: 17%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  /* --- BLAD 1 ACHTERKANT: LEREN BINNENKAFT (linkerpagina op Spread 2) --- */
+  .cover-inner-flap {
+    inset: 0;
+    width: 100%;
+    border-radius: 3.2rem;
+    overflow: hidden;
+    background: var(--navy);
+    box-shadow: -12px 18px 35px rgba(25, 36, 50, 0.14);
+    pointer-events: none;
+  }
+
+  .cover-inner-flap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* --- BLAD 2 VOORKANT: GELE STORY SHEET (rechterpagina op Spread 2) --- */
+  .story-sheet {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.72fr;
+    grid-template-rows: auto 1fr;
+    gap: 2.2rem 2.2rem;
+    padding: clamp(2rem, 4.2vw, 3.8rem) clamp(2rem, 4vw, 3.5rem) clamp(2.5rem, 4.5vw, 4rem)
+      clamp(2.8rem, 5vw, 4.5rem);
+    background: var(--paper);
+    box-shadow: 0 20px 45px rgba(25, 36, 50, 0.12);
+  }
+
+  .story-heading {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.2rem;
+    align-items: end;
+  }
+
+  .story-heading h1 {
+    margin: 0;
+    color: var(--olive);
+    font: italic 400 clamp(2rem, 3.3vw, 3.6rem) / 1 Georgia, 'Times New Roman', serif;
+    white-space: nowrap;
+  }
+
+  .story-copy {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.2rem;
+    color: var(--olive);
+    font-size: clamp(0.72rem, 0.82vw, 0.9rem);
+    line-height: 1.46;
+    text-align: justify;
+  }
+
+  .story-copy p {
+    margin: 0 0 0.95rem;
+  }
+
+  .portrait-wrap {
+    position: relative;
+    grid-column: 3;
+    grid-row: 1 / 3;
+    align-self: center;
+    width: 100%;
+  }
+
+  .portrait {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.76;
+    object-fit: cover;
+    transform: rotate(-2.5deg);
+  }
+
+  .portrait-detail {
+    position: absolute;
+    top: 0.5%;
+    left: -2%;
+    width: 40%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    transform: translate(-30%, -30%);
+  }
+
+  /* --- BLAD 2 ACHTERKANT: TEAL GALLERY SHEET (slaat om naar links op Spread 3!) --- */
+  .gallery-sheet {
+    display: grid;
+    place-items: center;
+    padding: clamp(2.5rem, 4.5vw, 4rem) clamp(3.5rem, 6vw, 5.5rem);
+    background: var(--aqua);
+    box-shadow: -14px 20px 45px rgba(25, 36, 50, 0.14);
+  }
+
+  .photo-gallery {
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: clamp(1rem, 2.2vw, 2rem);
+  }
+
+  .photo-gallery img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.74;
+    object-fit: cover;
+    box-shadow: 0 12px 24px rgba(25, 36, 50, 0.14);
+  }
+
+  .metal-star {
+    position: absolute;
+    z-index: 6;
+    width: 11.5%;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  .star-top {
+    top: 9%;
+    right: 9%;
+  }
+
+  .star-bottom {
+    bottom: 14%;
+    left: 7%;
+    width: 10.5%;
+  }
+
+  .metal-tape {
+    position: absolute;
+    z-index: 6;
+    top: 12%;
+    right: 42%;
+    width: 15%;
+    transform: rotate(-3deg);
+    pointer-events: none;
+  }
+
+  /* --- ONDERSTE BLAD RECHTS: OLIJFGROENE ACHTERKAFT (komt vrij zodra het gele blad omslaat) --- */
+  .base-sheet {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    border-radius: 3.2rem;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  .olive-sheet {
+    background: var(--olive);
+    box-shadow: 14px 20px 45px rgba(25, 36, 50, 0.14);
+  }
+
+  /* --- NAVIGATIE --- */
+  .cover-link {
+    position: absolute;
+    right: 4vw;
+    bottom: 1.5rem;
+    z-index: 35;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    border: 0;
+    background: transparent;
+    color: var(--navy);
+    font: 0.85rem 'Vipnagorgialla', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 250ms ease;
+  }
+
+  .sheet-corner-nav {
+    position: absolute;
+    right: 2.2rem;
+    bottom: 1.4rem;
+    z-index: 35;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    color: var(--olive);
+    font: 0.75rem 'Vipnagorgialla', sans-serif;
+    transform: translateZ(60px);
+    pointer-events: auto;
+  }
+
+  /* Vaste navigatie linksonder op pagina 3, exact uitgelijnd met de linkeronderhoek van het blad */
+  .gallery-stage-nav {
+    --book-w: min(74vw, 74svh * 1.82, 1180px);
+    --book-h: calc(var(--book-w) / 1.82);
+    position: absolute;
+    left: calc(50% - var(--book-w) * 0.66 + 2.4rem);
+    bottom: calc((100% - 3.5rem - 1rem - var(--book-h)) / 2 + 1rem + 1.4rem);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    color: var(--navy);
+    font: 0.75rem 'Vipnagorgialla', sans-serif;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease;
+  }
+
+  .about-book-page[data-state='3'] .gallery-stage-nav {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 800ms;
+  }
+
+  .nav-circle {
+    display: inline-grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+    background: transparent;
+    color: inherit;
+    font: 1rem 'Avenir', sans-serif;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .book-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.65rem;
+    padding-bottom: 1.1rem;
+    z-index: 35;
+  }
+
+  .dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    padding: 0;
+    border: 1.5px solid var(--navy);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .dot.is-active {
+    background: var(--navy);
+  }
+
+  /* Mobiel: rustige verticale weergave */
+  @media (max-width: 850px) {
+    html:has(.about-book-page),
+    body:has(.about-book-page) {
+      height: auto;
+      overflow-y: auto;
+    }
+
+    .about-book-page {
+      display: block;
+      height: auto;
+      min-height: 100svh;
+      padding: 4.5rem 1rem 3rem;
+    }
+
+    .book-stage {
+      display: block;
+      padding: 0;
+      perspective: none;
+    }
+
+    .book-assembly {
+      display: grid;
+      gap: 2rem;
+      width: 100%;
+      aspect-ratio: auto;
+      transform: none !important;
+    }
+
+    .leaf,
+    .leaf-face,
+    .base-sheet {
+      position: relative;
+      inset: auto;
+      transform: none !important;
+      backface-visibility: visible;
+    }
+
+    .olive-sheet,
+    .center-rings,
+    .cover-link,
+    .sheet-corner-nav,
+    .gallery-stage-nav,
+    .book-dots {
+      display: none;
+    }
+
+    .cover-board {
+      aspect-ratio: 1.45;
+      border-radius: 2rem;
+    }
+
+    .cover-inner-flap {
+      display: none;
+    }
+
+    .story-sheet {
+      grid-template-columns: 1fr;
+      border-radius: 2rem;
+      padding: 2rem 1.5rem;
+    }
+
+    .story-heading,
+    .story-copy {
+      grid-column: 1;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .portrait-wrap {
+      grid-column: 1;
+      grid-row: auto;
+      width: min(65%, 16rem);
+      margin: 1rem auto 0;
+    }
+
+    .gallery-sheet {
+      border-radius: 2rem;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .photo-gallery {
+      grid-template-columns: 1fr;
+      width: 100%;
+    }
+  }
+</style>
