@@ -55,7 +55,7 @@ const tiles = [
                 style={`object-position: ${tile.position}`}
                 loading="eager"
                 decoding="async"
-                fetchpriority={tile.title === 'Muse' ? 'high' : 'auto'}
+                fetchpriority="high"
               />
               <span class="project-tile-title">{tile.title}</span>
             </a>
