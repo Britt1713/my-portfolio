@@ -30,6 +30,18 @@ const { title = 'Britt Joosten — Portfolio' } = Astro.props;
     <ClientRouter />
   </head>
   <body>
+    <div class="home-portrait-backdrop" transition:persist="home-portrait-backdrop" aria-hidden="true">
+      <img
+        class="portrait-image"
+        src="/images/optimized/home-portrait-1920.webp"
+        srcset="/images/optimized/home-portrait-1280.webp 1280w, /images/optimized/home-portrait-1920.webp 1920w, /images/optimized/home-portrait-2800.webp 2800w, /images/optimized/home-portrait.webp 3948w"
+        sizes="calc(100vw - clamp(12rem, 22vw, 27.5rem))"
+        alt=""
+        loading="lazy"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </div>
     <slot />
   </body>
 </html>
