@@ -6,14 +6,14 @@ const tiles = [
   {
     kind: 'project',
     title: 'Muse',
-    image: '/images/product foto 1.png',
+    image: '/images/optimized/muse.webp',
     href: '/projects/muse/',
     position: 'center 44%',
   },
   {
     kind: 'project',
     title: 'Clara Luna Design',
-    image: '/images/Rich Poster Moukup Scene.png',
+    image: '/images/optimized/clara-luna-design.webp',
     href: '/projects/clara-luna-design/',
     position: 'center',
   },
@@ -21,7 +21,7 @@ const tiles = [
   {
     kind: 'project',
     title: 'Remunjs Pakketje',
-    image: '/images/Remunjs Pakketje.png',
+    image: '/images/optimized/remunjs-pakketje.webp',
     href: '/projects/remunjs-pakketje/',
     position: 'center',
   },
@@ -30,7 +30,7 @@ const tiles = [
   {
     kind: 'project',
     title: 'Professional Overthinkers',
-    image: '/images/PXL_20230604_103545450.jpg',
+    image: '/images/optimized/professional-overthinkers.webp',
     href: '/projects/professional-overthinkers/',
     position: 'center 54%',
   },
@@ -54,6 +54,8 @@ const tiles = [
                 alt=""
                 style={`object-position: ${tile.position}`}
                 loading="eager"
+                decoding="async"
+                fetchpriority={tile.title === 'Muse' ? 'high' : 'auto'}
               />
               <span class="project-tile-title">{tile.title}</span>
             </a>
