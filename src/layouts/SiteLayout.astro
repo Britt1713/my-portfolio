@@ -3,7 +3,12 @@ import { ClientRouter } from 'astro:transitions';
 import HomeMenu from '../components/HomeMenu.astro';
 import HomeHero from '../components/HomeHero.astro';
 
-const { title = 'Britt Joosten — Portfolio' } = Astro.props;
+interface Props {
+  title?: string;
+  preloadImages?: string[];
+}
+
+const { title = 'Britt Joosten — Portfolio', preloadImages = [] } = Astro.props;
 ---
 
 <!doctype html>
@@ -27,6 +32,7 @@ const { title = 'Britt Joosten — Portfolio' } = Astro.props;
       type="font/otf"
       crossorigin
     />
+    {preloadImages.map((href) => <link rel="preload" href={href} as="image" />)}
 
     <title>{title}</title>
     <ClientRouter />

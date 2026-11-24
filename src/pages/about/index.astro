@@ -165,60 +165,79 @@ import '../../styles/global.css';
 </SiteLayout>
 
 <script>
-  const page = document.querySelector('.about-book-page');
-  const leafCover = document.getElementById('leafCover');
-  const leafStory = document.getElementById('leafStory');
-  const openBtn = document.getElementById('openCoverBtn');
-  const dots = Array.from(document.querySelectorAll('.dot'));
-  let current = 1;
-  let isBusy = false;
+  function initializeNotebook() {
+    const page = document.querySelector<HTMLElement>('.about-book-page');
+    if (!page || page.dataset.notebookInitialized === 'true') return;
 
-  function updateUI(target) {
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('is-active', index + 1 === target);
-    });
-    if (openBtn) {
-      openBtn.style.opacity = target === 1 ? '1' : '0';
-      openBtn.style.pointerEvents = target === 1 ? 'auto' : 'none';
+    page.dataset.notebookInitialized = 'true';
+    const leafCover = page.querySelector<HTMLElement>('#leafCover');
+    const leafStory = page.querySelector<HTMLElement>('#leafStory');
+    const openBtn = page.querySelector<HTMLElement>('#openCoverBtn');
+    const dots = Array.from(page.querySelectorAll('.dot'));
+    let current = Number(page.dataset.state) || 1;
+    let isBusy = false;
+
+    function updateUI(target: number) {
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('is-active', index + 1 === target);
+      });
+      if (openBtn) {
+        openBtn.style.opacity = target === 1 ? '1' : '0';
+        openBtn.style.pointerEvents = target === 1 ? 'auto' : 'none';
+      }
     }
+
+    function setState(target: number) {
+      if (isBusy || target < 1 || target > 3 || target === current) return;
+      isBusy = true;
+      current = target;
+      updateUI(target);
+      page.setAttribute('data-state', String(target));
+      leafCover?.classList.toggle('is-flipped', target >= 2);
+      leafStory?.classList.toggle('is-flipped', target === 3);
+
+      window.setTimeout(() => {
+        isBusy = false;
+      }, 1050);
+    }
+
+    updateUI(current);
+    leafCover?.classList.toggle('is-flipped', current >= 2);
+    leafStory?.classList.toggle('is-flipped', current === 3);
+
+    page.addEventListener('click', (event) => {
+      if (!(event.target instanceof Element)) return;
+      const navButton = event.target.closest<HTMLButtonElement>('[data-goto]');
+      if (navButton && page.contains(navButton)) {
+        event.stopPropagation();
+        setState(Number(navButton.dataset.goto));
+      } else if (event.target.closest('.cover-board')) {
+        setState(2);
+      }
+    });
+
+    page.querySelector('.cover-board')?.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        setState(2);
+      }
+    });
   }
 
-  function setState(target) {
-    if (isBusy || target < 1 || target > 3 || target === current) return;
-    isBusy = true;
-    current = target;
-    updateUI(target);
+  document.addEventListener('astro:page-load', initializeNotebook);
+  initializeNotebook();
 
-    // Verschuiven van het boekje en omslaan van het blad gebeuren op exact hetzelfde moment
-    page?.setAttribute('data-state', String(target));
-    leafCover?.classList.toggle('is-flipped', target >= 2);
-    leafStory?.classList.toggle('is-flipped', target === 3);
+  document.addEventListener('keydown', (event) => {
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    if (event.target instanceof HTMLElement && event.target.isContentEditable) return;
+    if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return;
 
-    setTimeout(() => {
-      isBusy = false;
-    }, 1050);
-  }
+    const page = document.querySelector<HTMLElement>('.about-book-page');
+    if (!page) return;
 
-  document.querySelectorAll('[data-goto]').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const target = Number(btn.getAttribute('data-goto'));
-      setState(target);
-    });
-  });
-
-  const coverBoard = document.querySelector('.cover-board');
-  coverBoard?.addEventListener('click', () => setState(2));
-  coverBoard?.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      setState(2);
-    }
-  });
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') setState(current + 1);
-    if (e.key === 'ArrowLeft') setState(current - 1);
+    const current = Number(page.dataset.state) || 1;
+    const target = event.key === 'ArrowRight' ? current + 1 : event.key === 'ArrowLeft' ? current - 1 : current;
+    if (target !== current) page.querySelector<HTMLButtonElement>(`[data-goto="${target}"]`)?.click();
   });
 </script>
 

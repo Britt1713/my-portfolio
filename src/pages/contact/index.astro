@@ -3,7 +3,13 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
 import '../../styles/global.css';
 ---
 
-<SiteLayout title="Contact — Britt Joosten">
+<SiteLayout
+  title="Contact — Britt Joosten"
+  preloadImages={[
+    '/images/plaid-pattern-seamless-check-texture-260nw-2699705877.webp',
+    '/images/optimized/contact-eyelet-ring.webp',
+  ]}
+>
   <main class="contact-page" aria-labelledby="contact-title">
     <div class="contact-layout">
       <section class="contact-intro" aria-label="Contact Britt Joosten">
@@ -21,13 +27,16 @@ import '../../styles/global.css';
             class="eyelet-fabric"
             src="/images/plaid-pattern-seamless-check-texture-260nw-2699705877.webp"
             alt=""
+            loading="eager"
+            decoding="sync"
+            fetchpriority="high"
           />
           <img
             class="eyelet-ring"
             src="/images/optimized/contact-eyelet-ring.webp"
             alt=""
             loading="eager"
-            decoding="async"
+            decoding="sync"
             fetchpriority="high"
           />
         </div>
