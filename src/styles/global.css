@@ -24,7 +24,6 @@
   --navy: #172332;
   --olive: #5b5120;
   --paper: #fdfcf9;
-  --home-menu-width: clamp(12rem, 22vw, 27.5rem);
 }
 
 * {
@@ -43,7 +42,6 @@ body {
 
 body {
   font-family: 'Avenir', Arial, sans-serif;
-  isolation: isolate;
 }
 
 a {
@@ -52,23 +50,13 @@ a {
 
 .home-page {
   display: grid;
-  grid-template-columns: var(--home-menu-width) minmax(0, 1fr);
+  grid-template-columns: clamp(12rem, 22vw, 27.5rem) minmax(0, 1fr);
   min-height: 100%;
   overflow: hidden;
 }
 
-.home-portrait-backdrop {
-  position: fixed;
-  z-index: 0;
-  inset: 0 0 0 var(--home-menu-width);
+body:has(main:not(.home-page)) > .home-page {
   display: none;
-  overflow: hidden;
-  background:
-    linear-gradient(45deg, #ffffff 25%, #e0e0e0 25%, #e0e0e0 50%, #ffffff 50%, #ffffff 75%, #e0e0e0 75%) 0 0 / 0.55rem 0.55rem;
-}
-
-body:has(.home-page) .home-portrait-backdrop {
-  display: block;
 }
 
 .home-menu {
@@ -165,10 +153,21 @@ body:has(.home-page) .home-portrait-backdrop {
 
 .hero-collage {
   position: relative;
-  z-index: 1;
   height: 100%;
   overflow: hidden;
   isolation: isolate;
+  background:
+    linear-gradient(45deg, #ffffff 25%, #e0e0e0 25%, #e0e0e0 50%, #ffffff 50%, #ffffff 75%, #e0e0e0 75%) 0 0 / 0.55rem 0.55rem;
+}
+
+.portrait-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: -2;
+  overflow: hidden;
 }
 
 .portrait-image {

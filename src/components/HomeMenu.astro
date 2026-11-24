@@ -11,7 +11,7 @@ const items = [
     {items.map((item) => (
       <a class="menu-item" href={item.href}>
         <span class="menu-image">
-          <img class="menu-photo" src={item.image} alt="" loading="eager" decoding="async" fetchpriority="high" />
+          <img class="menu-photo" src={item.image} alt="" loading="lazy" decoding="async" fetchpriority="high" />
         </span>
         <span class="menu-title">{item.label}</span>
       </a>
