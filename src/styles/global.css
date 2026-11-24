@@ -51,8 +51,6 @@ a {
 }
 
 .home-page {
-  position: relative;
-  z-index: 1;
   display: grid;
   grid-template-columns: var(--home-menu-width) minmax(0, 1fr);
   min-height: 100%;
@@ -167,6 +165,7 @@ body:has(.home-page) .home-portrait-backdrop {
 
 .hero-collage {
   position: relative;
+  z-index: 1;
   height: 100%;
   overflow: hidden;
   isolation: isolate;
