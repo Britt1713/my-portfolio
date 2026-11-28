@@ -697,8 +697,13 @@ import '../../styles/global.css';
 
   /* ALLEEN TELEFOON / TABLET IN DESKTOPMODUS (touchscreen > 850px) */
   @media (hover: none) and (pointer: coarse) and (min-width: 851px) {
+    .book-stage {
+      --book-w: min(82vw, 76svh * 1.82, 1180px);
+      --book-h: calc(var(--book-w) / 1.82);
+    }
+
     .book-assembly {
-      width: min(82vw, 76svh * 1.82, 1180px);
+      width: var(--book-w);
     }
 
     .about-book-page[data-state='2'] .book-assembly {
@@ -709,15 +714,22 @@ import '../../styles/global.css';
       transform: translateX(94%);
     }
 
+    /* Foto + knoop rechts naast de tekst iets kleiner */
     .story-sheet {
       container-type: inline-size;
-      gap: 2.2cqw 2.8cqw;
+      grid-template-columns: 1fr 1fr 0.62fr;
+      gap: 2.2cqw 2.6cqw;
       padding: 4.5cqw 4.2cqw 5cqw 8.5cqw;
+    }
+
+    .portrait-wrap {
+      width: 88%;
+      justify-self: center;
     }
 
     .story-heading,
     .story-copy {
-      gap: 2.8cqw;
+      gap: 2.6cqw;
     }
 
     .story-heading h1 {
@@ -733,39 +745,42 @@ import '../../styles/global.css';
       margin-bottom: 1.2cqw;
     }
 
-    /* Exact dezelfde knop- en tekstverhouding als op de laptopversie */
+    /* Gele pagina: knopblok rechtsonder iets verder van de rand af (meer naar links) */
     .sheet-corner-nav {
-      right: 3.1cqw;
-      bottom: 2.2cqw;
+      right: 4.6cqw;
+      bottom: 2.6cqw;
       gap: 1.15cqw;
       font-size: 1.3cqw;
     }
 
+    /* Blauwe pagina: knopblok linksonder iets verder van de rand af (meer naar rechts) */
     .gallery-stage-nav {
-      --book-w: min(82vw, 76svh * 1.82, 1180px);
-      --book-h: calc(var(--book-w) / 1.82);
-      left: calc(50% - var(--book-w) * 0.56 + var(--book-w) * 0.031);
-      bottom: calc((100% - 3.5rem - 1rem - var(--book-h)) / 2 + 1rem + var(--book-w) * 0.022);
+      left: calc(50% - var(--book-w) * 0.56 + var(--book-w) * 0.046);
+      bottom: calc((100% - 3.5rem - 1rem - var(--book-h)) / 2 + 1rem + var(--book-w) * 0.026);
       gap: calc(var(--book-w) * 0.0115);
       font-size: calc(var(--book-w) * 0.013);
     }
 
     .nav-circle {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       width: 2.75cqw;
       height: 2.75cqw;
       padding: 0;
       border-width: 1.3px;
-      font-size: 1.75cqw;
-      line-height: 1;
     }
 
     .gallery-stage-nav .nav-circle {
       width: calc(var(--book-w) * 0.0275);
       height: calc(var(--book-w) * 0.0275);
-      font-size: calc(var(--book-w) * 0.0175);
+    }
+
+    /* "Open notebook ->" uitgelijnd met de rechterrand van het boekje en dichter eronder */
+    .cover-link {
+      right: calc(50% - var(--book-w) / 2 + var(--book-w) * 0.015);
+      bottom: calc((100% - 3.5rem - 1rem - var(--book-h)) / 2 + 1rem - 2.4rem);
+      font-size: calc(var(--book-w) * 0.0145);
     }
   }
 
