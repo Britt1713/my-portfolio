@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Vipnagorgialla';
-  src: url('/fonts/Vipnagorgialla Rg.otf') format('opentype');
+  src: url('/fonts/Vipnagorgialla%20Rg.otf') format('opentype');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Vipnagorgialla';
-  src: url('/fonts/Vipnagorgialla Bd.otf') format('opentype');
+  src: url('/fonts/Vipnagorgialla%20Bd.otf') format('opentype');
   font-weight: 700;
   font-display: swap;
 }
@@ -38,6 +38,8 @@ body {
   overflow: hidden;
   background: var(--paper);
   color: var(--navy);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -78,7 +80,6 @@ body:has(main:not(.home-page)) > .home-page {
   align-items: center;
   justify-content: center;
   gap: 0;
-  /* transform: translateY(-4%); */
 }
 
 .menu-item {
@@ -115,7 +116,6 @@ body:has(main:not(.home-page)) > .home-page {
   height: 100%;
   object-fit: contain;
 }
-
 
 .menu-title {
   z-index: 2;
@@ -204,7 +204,7 @@ body:has(main:not(.home-page)) > .home-page {
 
 .hero-star {
   z-index: 1;
-  transform: scale(0.63); /* Past grootte ster aan t.o.v. de tekst */
+  transform: scale(0.63);
 }
 
 .hero-tape {
@@ -242,7 +242,37 @@ body:has(main:not(.home-page)) > .home-page {
   bottom: 3%;
 }
 
-@media (max-aspect-ratio: 3/4) {
+/* ALLEEN TELEFOON / TABLET IN DESKTOPMODUS (touchscreen > 850px) */
+@media (hover: none) and (pointer: coarse) and (min-width: 851px) {
+  .home-page {
+    grid-template-columns: 24vw minmax(0, 1fr);
+    height: 100svh;
+  }
+
+  .menu-item {
+    width: min(17vw, 20svh);
+    height: min(17vw, 20svh);
+  }
+
+  .portrait-panel {
+    height: 100svh;
+  }
+
+  .hero-art {
+    top: 50%;
+    left: 50%;
+    width: min(62vw, 75svh);
+  }
+
+  .portfolio-wordmark,
+  .designer-name {
+    font-size: 1.35vw;
+    right: 2%;
+  }
+}
+
+/* Standaard mobiele weergave (<= 850px) */
+@media (max-width: 850px) {
   .home-page {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: minmax(0, 1fr) auto;
