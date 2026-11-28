@@ -68,11 +68,11 @@ import '../../styles/global.css';
 
             <div class="sheet-corner-nav">
               <button type="button" class="nav-circle" data-goto="1" aria-label="Back to notebook cover">
-                ←
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" /></svg>
               </button>
               <span class="page-counter">02 / 03</span>
               <button type="button" class="nav-circle" data-goto="3" aria-label="Next notebook page">
-                →
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
               </button>
             </div>
           </div>
@@ -146,7 +146,7 @@ import '../../styles/global.css';
       <!-- Vaste navigatie voor Pagina 3 (buiten 3D-rotatie zodat hij altijd 100% klikbaar is) -->
       <div class="gallery-stage-nav" aria-label="Gallery navigation">
         <button type="button" class="nav-circle" data-goto="2" aria-label="Previous notebook page">
-          ←
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" /></svg>
         </button>
         <span class="page-counter">03 / 03</span>
       </div>
@@ -645,17 +645,32 @@ import '../../styles/global.css';
   }
 
   .nav-circle {
-    display: inline-grid;
-    place-items: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 2rem;
     height: 2rem;
+    padding: 0;
+    margin: 0;
+    appearance: none;
+    -webkit-appearance: none;
     border: 1.5px solid currentColor;
     border-radius: 50%;
     background: transparent;
     color: inherit;
-    font: 1rem 'Avenir', sans-serif;
     cursor: pointer;
     pointer-events: auto;
+  }
+
+  .nav-circle svg {
+    width: 56%;
+    height: 56%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    display: block;
   }
 
   .book-dots {
