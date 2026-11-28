@@ -683,7 +683,15 @@ import '../../styles/global.css';
   /* ALLEEN TELEFOON / TABLET IN DESKTOPMODUS (touchscreen > 850px) */
   @media (hover: none) and (pointer: coarse) and (min-width: 851px) {
     .book-assembly {
-      width: min(84vw, 76svh * 1.82, 1180px);
+      width: min(82vw, 76svh * 1.82, 1180px);
+    }
+
+    .about-book-page[data-state='2'] .book-assembly {
+      transform: translateX(6%);
+    }
+
+    .about-book-page[data-state='3'] .book-assembly {
+      transform: translateX(94%);
     }
 
     .story-sheet {
@@ -710,7 +718,6 @@ import '../../styles/global.css';
       margin-bottom: 1cqw;
     }
 
-    /* Kleinere, verfijnde knopjes rechtsonder & linksonder op telefoon-desktopmodus */
     .sheet-corner-nav {
       right: 2.6cqw;
       bottom: 1.8cqw;
@@ -719,9 +726,9 @@ import '../../styles/global.css';
     }
 
     .gallery-stage-nav {
-      --book-w: min(84vw, 76svh * 1.82, 1180px);
+      --book-w: min(82vw, 76svh * 1.82, 1180px);
       --book-h: calc(var(--book-w) / 1.82);
-      left: calc(50% - var(--book-w) * 0.66 + var(--book-w) * 0.026);
+      left: calc(50% - var(--book-w) * 0.56 + var(--book-w) * 0.026);
       bottom: calc((100% - 3.5rem - 1rem - var(--book-h)) / 2 + 1rem + var(--book-w) * 0.018);
       gap: calc(var(--book-w) * 0.008);
       font-size: calc(var(--book-w) * 0.009);
