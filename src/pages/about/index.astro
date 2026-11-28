@@ -723,7 +723,7 @@ import '../../styles/global.css';
   }
 
   /* Mobiel: rustige verticale weergave */
-  @media (max-width: 850px) {
+  @media (max-width: 850px), (max-aspect-ratio: 3/4) {
     html:has(.about-book-page),
     body:has(.about-book-page) {
       height: auto;
@@ -749,6 +749,10 @@ import '../../styles/global.css';
       width: 100%;
       aspect-ratio: auto;
       transform: none !important;
+    }
+
+    .leaf-cover {
+      order: -1;
     }
 
     .leaf,
@@ -789,6 +793,11 @@ import '../../styles/global.css';
       grid-column: 1;
       grid-template-columns: 1fr;
       gap: 0.75rem;
+    }
+
+    .story-copy {
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
 
     .portrait-wrap {

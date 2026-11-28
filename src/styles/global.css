@@ -241,3 +241,58 @@ body:has(main:not(.home-page)) > .home-page {
   right: 1%;
   bottom: 3%;
 }
+
+@media (max-aspect-ratio: 3/4) {
+  .home-page {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto;
+    height: 100svh;
+    min-height: 100svh;
+  }
+
+  .home-menu {
+    grid-row: 2;
+    height: auto;
+    padding: 0.35rem 0.75rem max(0.5rem, env(safe-area-inset-bottom));
+  }
+
+  .menu-items {
+    height: auto;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .menu-item {
+    width: min(22vw, 7rem);
+    height: auto;
+  }
+
+  .hero-collage {
+    grid-row: 1;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .portrait-panel {
+    height: 100%;
+  }
+
+  .hero-art {
+    top: 50%;
+    left: 50%;
+    width: min(84vw, 58svh, 36rem);
+  }
+
+  .portfolio-wordmark,
+  .designer-name {
+    font-size: clamp(0.8rem, 3vw, 1.3rem);
+  }
+
+  .portfolio-wordmark {
+    right: 3%;
+  }
+
+  .designer-name {
+    right: 3%;
+  }
+}
