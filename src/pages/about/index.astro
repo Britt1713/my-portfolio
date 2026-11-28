@@ -63,7 +63,7 @@ import '../../styles/global.css';
                 src="/images/me.png"
                 alt="Britt wearing a backpack on a hiking trip"
               />
-              <img class="portrait-detail" src="/images/Button 1.png" alt="" />
+              <img class="portrait-detail" src="/images/Button%201.png" alt="" />
             </div>
 
             <div class="sheet-corner-nav">
@@ -113,15 +113,15 @@ import '../../styles/global.css';
             tabindex="0"
             aria-label="Open the About Me notebook"
           >
-            <img class="cover-star" src="/images/Star yellow.png" alt="" />
+            <img class="cover-star" src="/images/Star%20yellow.png" alt="" />
             <img class="cover-white-bg" src="/images/face_background.png" alt="" />
-            <img class="cover-title" src="/images/About me.png" alt="About me" />
+            <img class="cover-title" src="/images/About%20me.png" alt="About me" />
             <img
               class="cover-person"
               src="/images/face_stars.png"
               alt="Illustrated portrait of Britt"
             />
-            <img class="cover-button" src="/images/Button 2.png" alt="" />
+            <img class="cover-button" src="/images/Button%202.png" alt="" />
           </div>
 
           <!-- Binnenkant van de kaft (ligt op de linkerhelft; op Spread 3 legt de teal pagina zich hier bovenop) -->
@@ -133,7 +133,7 @@ import '../../styles/global.css';
         <!-- CENTRALE RINGBAND (blijft altijd op de middelste rug tussen linker- en rechterpagina liggen) -->
         <img
           class="rings center-rings"
-          src="/images/jump rings.png"
+          src="/images/jump%20rings.png"
           alt=""
           decoding="sync"
         />
@@ -189,6 +189,7 @@ import '../../styles/global.css';
       current = target;
       updateUI(target);
 
+      // Verschuiven van het boekje en omslaan van het blad gebeuren op exact hetzelfde moment
       page.setAttribute('data-state', String(target));
       leafCover?.classList.toggle('is-flipped', target >= 2);
       leafStory?.classList.toggle('is-flipped', target === 3);
@@ -281,6 +282,7 @@ import '../../styles/global.css';
     perspective: 2600px;
   }
 
+  /* Synchrone verschuiving van het hele boekje */
   .book-assembly {
     position: relative;
     width: min(74vw, 74svh * 1.82, 1180px);
@@ -299,6 +301,7 @@ import '../../styles/global.css';
     transform: translateX(84%);
   }
 
+  /* Centrale ringband op de middelste rug */
   .center-rings {
     position: absolute;
     top: 7%;
@@ -313,6 +316,7 @@ import '../../styles/global.css';
     backface-visibility: hidden;
   }
 
+  /* --- 3D BLADEREN (LEAVES) --- */
   .leaf {
     position: absolute;
     inset: 0;
@@ -364,6 +368,7 @@ import '../../styles/global.css';
     pointer-events: auto;
   }
 
+  /* --- BLAD 1 VOORKANT: NAVY COVER --- */
   .cover-board {
     background: var(--navy);
     box-shadow: 0 20px 45px rgba(25, 36, 50, 0.16);
@@ -426,6 +431,7 @@ import '../../styles/global.css';
     pointer-events: none;
   }
 
+  /* --- BLAD 1 ACHTERKANT: LEREN BINNENKAFT --- */
   .cover-inner-flap {
     inset: 0;
     width: 100%;
@@ -442,6 +448,7 @@ import '../../styles/global.css';
     object-fit: cover;
   }
 
+  /* --- BLAD 2 VOORKANT: GELE STORY SHEET --- */
   .story-sheet {
     display: grid;
     grid-template-columns: 1fr 1fr 0.78fr;
@@ -509,6 +516,7 @@ import '../../styles/global.css';
     transform: translate(-30%, -30%);
   }
 
+  /* --- BLAD 2 ACHTERKANT: TEAL GALLERY SHEET --- */
   .gallery-sheet {
     display: grid;
     place-items: center;
@@ -563,6 +571,7 @@ import '../../styles/global.css';
     pointer-events: none;
   }
 
+  /* --- ONDERSTE BLAD RECHTS: OLIJFGROENE ACHTERKAFT --- */
   .base-sheet {
     position: absolute;
     inset: 0;
@@ -577,6 +586,7 @@ import '../../styles/global.css';
     box-shadow: 14px 20px 45px rgba(25, 36, 50, 0.14);
   }
 
+  /* --- NAVIGATIE --- */
   .cover-link {
     position: absolute;
     right: 4vw;
@@ -668,6 +678,7 @@ import '../../styles/global.css';
     background: var(--navy);
   }
 
+  /* Mobiel: rustige verticale weergave */
   @media (max-width: 850px) {
     html:has(.about-book-page),
     body:has(.about-book-page) {
